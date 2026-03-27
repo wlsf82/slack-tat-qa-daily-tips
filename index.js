@@ -60,6 +60,17 @@ function getRandomTip() {
   return qaTips[index]
 }
 
+const sectionTexts = [
+  "🧪 *Here's your QA daily tip.*",
+  "💬 *Time for your daily dose of QA wisdom.*",
+  "🚀 *Sharpen your QA skills with today's tip.*"
+]
+
+function getRandomSectionText() {
+  const index = Math.floor(Math.random() * sectionTexts.length)
+  return sectionTexts[index]
+}
+
 async function sendTip() {
   const tip = getRandomTip()
 
@@ -69,7 +80,7 @@ async function sendTip() {
         type: "section",
         text: {
           type: "mrkdwn",
-          text: "🧪 *Here's your QA daily tip.*"
+          text: getRandomSectionText()
         }
       },
       {
